@@ -33,9 +33,9 @@ router.post("/test", (req, res) => {
     .then((response) => {
       res.send({ result: response?.data?.choices[0]?.text });
     })
-    .catch(() => {
+    .catch((err) => {
       res.send({
-        result: "There was an error trying to connect to OpenAI ChatGPT-3",
+        result: `There was an error trying to connect to OpenAI ChatGPT-3 ${err}`,
       });
     });
 });
