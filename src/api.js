@@ -17,6 +17,7 @@ const openai = new OpenAIApi(configuration);
 const router = express.Router();
 
 router.post("/test", (req, res) => {
+  console.log("API KEY is ", process.env.API_KEY);
   const { prompt } = req.body;
   openai
     .createCompletion({
