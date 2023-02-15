@@ -28,7 +28,6 @@ router.post("/test", (req, res) => {
       top_p: 1,
       frequency_penalty: 0.0,
       presence_penalty: 0.0,
-      stream: true,
     })
     .then((response) => {
       res.send({ result: response?.data?.choices[0]?.text });
